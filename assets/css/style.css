@@ -1,0 +1,24 @@
+body {
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#container{
+    min-height: 93%;
+}
+
+#head, #category{
+    font-family: 'Bungee Inline', cursive;
+}
+
+#heading{
+    font-size: 70px;
+}
+.answer{
+    font-size: 18px;
+}
+.answer:hover{
+    background-color: #f0f8ff;    
+}

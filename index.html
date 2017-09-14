@@ -4,13 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TriviaGame</title>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="container">
-        
+    <div class="container bg-warning mt-4" id="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center text-primary" id="head"><span id="heading">TV Trivia!</span></div>
+        </div>
+        <div class="row text-center">
+            <span class="col-md-12 font-weight-bold" id="nameSpan">What is your name:</span>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8  d-flex justify-content-center" id="identity">
+                <input class="form-control w-25" type="text" value="" id="name-input">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center" id="forResult"></div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text-center mt-4">
+                <div id="timerDiv">
+                    <h5>You have <span id="counter" class="text-danger font-weight-bold"> 25 </span> second(s) left.</h5>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text-center mt-4">
+                <span id="category"></span>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text-center mt-4">
+                <span id="question"></span>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center mt-4 font-weight-bold text-success" id="answers"></div>
+            <div class="col-md-4"></div>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
