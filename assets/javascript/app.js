@@ -12,6 +12,7 @@ $().ready(function () {
     var correct = 0;
     var incorrect = 0;
     var missed = 0;
+    var showGif;
 
     var questions = [
         ['Game of Thrones', 'What is John Snow\'s real name?', 'Aegon_Targaryen'],
@@ -42,19 +43,19 @@ $().ready(function () {
         ['Beth', 'Tara', 'Judith', 'Carol']
     ];
 
-    var gifLinks =[
-        ["https://media.giphy.com/media/Hse9B8evCuTxm/giphy.gif","https://media.giphy.com/media/ntH8ApnIwy9G0/giphy.gif"],
-        ["https://media.giphy.com/media/1qyXr3Dtl7pRe/giphy.gif","https://media.giphy.com/media/PP14k6hfM4CK4/giphy.gif"],
-        ["https://media.giphy.com/media/ojdRC2Om3auJ2/giphy.gif","https://media.giphy.com/media/ZP77hdeIBIUfe/giphy.gif"],
-        ["https://media.giphy.com/media/XIZqzraTsKgOQ/giphy.gif","https://media.giphy.com/media/J3tWFC8EE1vW/giphy.gif"],
-        ["https://media.giphy.com/media/HWEu0z9HFiXYI/giphy.gif","https://media.giphy.com/media/3o7qDHE7qtr0Nftodi/giphy.gif"],
-        ["https://media.giphy.com/media/SXJ0L8VSI4vmg/giphy.gif","https://media.giphy.com/media/emSXn8DWV520g/giphy.gif"],
-        ["https://media.giphy.com/media/l41YyfXQ2Y50oMpKU/giphy.gif","https://media.giphy.com/media/l3V0Ek8VNxQ69ObJK/giphy.gif"],
-        ["https://media.giphy.com/media/l3V0oeWJZQru5gGTS/giphy.gif","https://media.giphy.com/media/OmoBzhit6A8tW/giphy.gif"],
-        ["https://media.giphy.com/media/Aa9zP9nyaHeuY/giphy.gif","https://media.giphy.com/media/3oz8xGeudzgjnuWPlK/giphy.gif"],
-        ["https://media.giphy.com/media/lqBAeIFwVEX6g/giphy.gif","https://media.giphy.com/media/13GleYVVfqpIeQ/giphy.gif"],
-        ["https://media.giphy.com/media/3o6Zt8MY4WYNRul4pa/giphy.gif","https://media.giphy.com/media/3o7TKqtGkUW07hDK9y/giphy.gif"],
-        ["https://media.giphy.com/media/F6YWgQwUr7cGI/giphy.gif","https://media.giphy.com/media/haukaDVxTZiiQ/giphy.gif"]
+    var gifLinks = [
+        ["https://media.giphy.com/media/Hse9B8evCuTxm/giphy.gif", "https://media.giphy.com/media/ntH8ApnIwy9G0/giphy.gif"],
+        ["https://media.giphy.com/media/1qyXr3Dtl7pRe/giphy.gif", "https://media.giphy.com/media/PP14k6hfM4CK4/giphy.gif"],
+        ["https://media.giphy.com/media/ojdRC2Om3auJ2/giphy.gif", "https://media.giphy.com/media/ZP77hdeIBIUfe/giphy.gif"],
+        ["https://media.giphy.com/media/XIZqzraTsKgOQ/giphy.gif", "https://media.giphy.com/media/J3tWFC8EE1vW/giphy.gif"],
+        ["https://media.giphy.com/media/HWEu0z9HFiXYI/giphy.gif", "https://media.giphy.com/media/3o7qDHE7qtr0Nftodi/giphy.gif"],
+        ["https://media.giphy.com/media/SXJ0L8VSI4vmg/giphy.gif", "https://media.giphy.com/media/emSXn8DWV520g/giphy.gif"],
+        ["https://media.giphy.com/media/l41YyfXQ2Y50oMpKU/giphy.gif", "https://media.giphy.com/media/l3V0Ek8VNxQ69ObJK/giphy.gif"],
+        ["https://media.giphy.com/media/l3V0oeWJZQru5gGTS/giphy.gif", "https://media.giphy.com/media/OmoBzhit6A8tW/giphy.gif"],
+        ["https://media.giphy.com/media/Aa9zP9nyaHeuY/giphy.gif", "https://media.giphy.com/media/3oz8xGeudzgjnuWPlK/giphy.gif"],
+        ["https://media.giphy.com/media/lqBAeIFwVEX6g/giphy.gif", "https://media.giphy.com/media/13GleYVVfqpIeQ/giphy.gif"],
+        ["https://media.giphy.com/media/3o6Zt8MY4WYNRul4pa/giphy.gif", "https://media.giphy.com/media/3o7TKqtGkUW07hDK9y/giphy.gif"],
+        ["https://media.giphy.com/media/F6YWgQwUr7cGI/giphy.gif", "https://media.giphy.com/media/haukaDVxTZiiQ/giphy.gif"]
     ];
 
     //Starts the game when the start button is pressed
@@ -117,7 +118,7 @@ $().ready(function () {
             displayResult();
         }
 
-    } //ends randomaizer
+    } //ends randomizer
 
     //scrambles answers options so they wont be in the same order every time.
     function randomizeAnswers() {
@@ -131,13 +132,13 @@ $().ready(function () {
             randAnswers = answers[rand].reverse();
         if (randPick === 3)
             randAnswers = answers[rand].sort().reverse();
-        
-    }//ends randomAnswers
+
+    } //ends randomAnswers
 
     // Runs the randomizer function and sets a new question everytime.    
     function setQuestions() {
         randomizer();
-        $("#category").html("<h4>Your category is - \"" + category + "\"</h4");
+        $("#category").html("<h3>Your category is - \"" + category + "\"</h3");
         $("#question").html("<h4>" + question + "</h4");
         setAnswers();
 
@@ -147,7 +148,7 @@ $().ready(function () {
         clearInterval(intervalId);
         timerCnt = 25;
         $("#counter").text(timerCnt);
-        if (numQuestions > 0)
+        if (numQuestions >= 0)
             startTimer();
         $("#answers").empty();
 
@@ -161,11 +162,13 @@ $().ready(function () {
     //and correct. Then calls for next question.
     function verifyAnswer(selection) {
 
-        if (selection === questions[rand][2])
+        if (selection === questions[rand][2]) {
             correct++;
-        else
+            setGif(0);
+        } else {
             incorrect++;
-        setQuestions();
+            setGif(1);
+        }
 
     } //ends verifyAnswer
 
@@ -174,19 +177,19 @@ $().ready(function () {
         $("#category").hide();
         $("#question").hide();
         $("#timerDiv").hide();
-    }//ends hideIds
+    } //ends hideIds
 
     function showIds() {
         $("#answers").show();
         $("#category").show();
         $("#question").show();
         $("#timerDiv").show();
-    }//ends showIds
+    } //ends showIds
 
     function displayResult() {
 
         clearInterval(intervalId);
-        hideIds();
+        //hideIds();
         $("#nameSpan").html("<h4>Good game " + name + "</h4");
         $("#forResult").append("<div class='mt-5'>Correct answers: " + correct + "</div>");
         $("#forResult").append("<div>Incorrect answers: " + incorrect + "</div>");
@@ -205,8 +208,8 @@ $().ready(function () {
 
     //Starts the timer until it reaches zero
     function startTimer() {
-
-        intervalId = setInterval(function () {
+    
+        intervalId = setInterval(function () {            
             timerCnt--;
             if (timerCnt >= 0) {
                 $("#counter").text(timerCnt);
@@ -218,16 +221,42 @@ $().ready(function () {
 
     } //ends startTimer
 
+    function setGif(inVal) {
+        showGif = gifLinks[rand][inVal];
+        hideIds();
+        $("#category").show();
+
+        if (inVal === 0) {
+            $("#category").html("<h2>CORRECT!!</h2>");
+        } else if (inVal === 1){
+            $("#category").html("<h2>WRONG ANSWER!!</h2>");
+        } else {
+            $("#category").html("<h2>Time Ran Out!!</h2>");
+            showGif = gifLinks[rand][1];
+        }
+        $("#forGif").html("<img src=" + showGif + ">");
+
+        var fiveSec = setTimeout(function () {
+            if (numQuestions > 0) {
+                setQuestions();
+                showIds();
+            } else {
+                displayResult();
+                $("#category").hide();
+            }
+            $("#forGif").empty();
+        }, 2000);
+
+    } //ends setGif
+
     function missedTimer() {
         missed++;
-        setQuestions();
+        setGif(3);
+        //setQuestions();
 
-    }//ends missedTime
+    } //ends missedTime
 
 
     initialize() //call upon start
 
 }); //ends ready
-
-
-
