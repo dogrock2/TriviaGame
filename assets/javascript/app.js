@@ -32,7 +32,7 @@ $().ready(function () {
         ['Viserys_Targaryen', 'Aegon_Targaryen', 'Rhaegar_Targaryen', 'Petyr_Baelish'],
         ['Drogon', 'Rhaegal', 'Viserion', 'Nymeria'],
         ['Pentos', 'Meereen', 'Yunkai', 'Astapor'],
-        ['Viserion_Targaryen', 'Aegon_Targaryen', 'Rhaegar_Targaryen', 'Gregor_Clegane'],
+        ['Viserion_Targaryen', 'Aegon_Targaryen', 'Rhaegar_Targaryen', 'Aerys_Targaryen'],
         ['Azor_Ahai', 'Jorah_Mormont', 'Theon_Greyjoy', 'Joramun'],
         ['TJ_Miller', 'Thomas_Middleditch', 'Zach_Woods', 'Martin_Starr'],
         ['Richard_Hendricks', 'Erlich_Bachman', 'Bertram_Gilfoyle', 'Peter_Gregory'],
